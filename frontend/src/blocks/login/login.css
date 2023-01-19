@@ -1,0 +1,15 @@
+.login {
+  flex: 1 0 auto;
+  max-width: 358px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 60px auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 450px){
+  .login {
+    margin-top: 40px;
+    max-width: 260px;
+  }
+}

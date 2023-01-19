@@ -1,0 +1,23 @@
+.login__transition {
+  text-decoration: none;
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #fff;
+  margin-top: 15px;
+  transition: opacity .3s ease;
+}
+
+.login__transition:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 450px) {
+  .login__transition {
+    margin-top: 20px;
+  }
+}

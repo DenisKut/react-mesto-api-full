@@ -1,0 +1,10 @@
+.popup-view__container {
+  box-sizing: border-box;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: start;
+  grid-template-columns: minmax(min-content, max-content);
+  margin: 0 auto;
+  position: relative;
+}

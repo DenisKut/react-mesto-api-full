@@ -1,0 +1,16 @@
+.login__input-error {
+  display: flex;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  height: 30px;
+  color: #FF0000;
+  position: relative;
+  margin-bottom: 10px;
+  z-index: 200;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}

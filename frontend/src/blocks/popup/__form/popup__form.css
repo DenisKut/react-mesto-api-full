@@ -1,0 +1,9 @@
+.popup__form {
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px;
+
+}
