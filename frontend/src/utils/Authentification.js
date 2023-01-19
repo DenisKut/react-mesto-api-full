@@ -1,4 +1,4 @@
-const authUrl = "https://auth.nomoreparties.co"
+const authUrl = "https://api.mesto.for.all.nomoredomains.rocks"
 class Authentification{
   constructor({link, headers}) {
     this._link = link;
