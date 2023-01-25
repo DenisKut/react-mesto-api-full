@@ -1,5 +1,8 @@
-const authUrl = "https://api.mesto.for.all.nomoredomains.rocks"
-//const authUrl = "http://localhost:3000"
+// const authUrl = "http://localhost:3000"
+
+const authUrl = "https://auth.nomoreparties.co"
+
+//const authUrl = "http://api.mesto.for.all.nomoredomains.rocks"
 class Authentification{
   constructor({link, headers}) {
     this._link = link;
@@ -26,15 +29,15 @@ class Authentification{
   }
 
   login(email, password) {
-    return fetch(`${this._link}/signin`, {
+    const res = fetch(`${this._link}/signin`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
         "password": password,
         "email": email
       })
-    })
-    .then(this.checkErrors);
+    });
+    return this.checkErrors(res);
   }
 
   checkToken(jwt) {

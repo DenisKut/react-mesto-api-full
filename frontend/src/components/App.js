@@ -203,9 +203,9 @@ useEffect(() => {
   const jwt = localStorage.getItem('jwt');
   if (jwt) {
     authentification.checkToken(jwt)
-      .then(res => {
-        if(res) {
-          setEmail(res.data.email);
+      .then(data => {
+        if(data) {
+          setEmail(data.email);
           setLoggedIn(true);
           history.push('/');
         }

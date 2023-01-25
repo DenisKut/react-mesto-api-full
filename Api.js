@@ -108,9 +108,17 @@ class Api {
 }
 
 export default new Api({
-  link: 'https://api.mesto.for.all.nomoredomains.rocks',
-  //link: "http://localhost:3000",
+  link: 'https://mesto.nomoreparties.co/v1/cohort-51',
   headers: {
+    authorization: '22bb9c92-ea2e-40eb-b13f-953212e16dcb',
     'Content-Type': 'application/json'
   }
 });
+
+// export default new Api({
+//   //link: 'http://api.mesto.for.all.nomoredomains.rocks',
+//   link: "http://localhost:3000",
+//   headers: {
+//     'Content-Type': 'application/json'
+//   }
+// });

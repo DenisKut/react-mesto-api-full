@@ -12,7 +12,7 @@ const router = require('./routes/routes');
 const { errorHandler } = require('./errors/standartError');
 
 // Слушаем 3000 порт
-const { PORT = 3000, DATA_BASE = 'mongodb://localhost:27017/mestodb' } = process.env;
+const { PORT = 3000, DATA_BASE = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const requestLimiter = rateLimit({
   windowMs: 1000 * 60,
@@ -31,6 +31,21 @@ app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.dnsPrefetchControl());
 
+// const options = {
+//   origin: [
+//     'http://localhost:3001',
+//     'https://api.mesto.for.all.nomoredomains.rocks',
+//     'https://mesto.for.all.nomoredomains.rocks',
+//   ],
+//   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
+//   credentials: true,
+// };
+
+// app.use('*', cors(options));
+
 app.use(cors());
 
 mongoose.set('strictQuery', true);
@@ -38,6 +53,13 @@ mongoose.set('strictQuery', true);
 app.use(requestLimiter);
 
 app.use(requestLogger);
+// краш-тест сервера
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use(router);
 app.use(errorLogger);
 
